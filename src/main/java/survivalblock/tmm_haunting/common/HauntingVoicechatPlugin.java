@@ -1,5 +1,6 @@
 package survivalblock.tmm_haunting.common;
 
+import de.maxhenkel.voicechat.api.Group;
 import de.maxhenkel.voicechat.api.VoicechatConnection;
 import de.maxhenkel.voicechat.api.VoicechatPlugin;
 import de.maxhenkel.voicechat.api.audiochannel.StaticAudioChannel;
@@ -68,7 +69,8 @@ public class HauntingVoicechatPlugin implements VoicechatPlugin {
             return;
         }
 
-        if (!Objects.equals(playerConnection.getGroup(), TrainVoicePlugin.GROUP)) {
+        Group group = playerConnection.getGroup();
+        if (group == null || TrainVoicePlugin.GROUP == null || !Objects.equals(group, TrainVoicePlugin.GROUP)) {
             return;
         }
 
