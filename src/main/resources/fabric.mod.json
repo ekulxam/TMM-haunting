@@ -24,7 +24,10 @@
         ],
 		"fabric-datagen": [
           "survivalblock.tmm_haunting.client.datagen.GhostsOfChristmasPastDataGenerator"
-		]
+		],
+        "voicechat": [
+          "survivalblock.tmm_haunting.common.HauntingVoicechatPlugin"
+        ]
 	},
 	"mixins": [
 		"tmm_haunting.mixins.json"

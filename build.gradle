@@ -83,6 +83,12 @@ dependencies {
     modImplementation("io.github.douira:glsl-transformer:${glslTransformer_version}")
 }
 
+loom {
+    runConfigs.forEach {
+        it.ideConfigGenerated = true
+    }
+}
+
 processResources {
 	inputs.property "version", project.version
 
