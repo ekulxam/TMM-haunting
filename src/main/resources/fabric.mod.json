@@ -1,0 +1,38 @@
+{
+	"schemaVersion": 1,
+	"id": "tmm_haunting",
+	"version": "${version}",
+	"name": "Ghosts of Christmas Past",
+	"description": "Adds haunting to TrainMurderMystery",
+	"authors": [
+		"Survivalblock"
+	],
+	"contact": {
+		"homepage": "https://github.com/ekulxam/TMM-haunting",
+		"sources": "https://github.com/ekulxam/TMM-haunting",
+        "issues": "https://github.com/ekulxam/TMM-haunting/issues"
+	},
+	"license": "MIT",
+	"icon": "assets/tmm_haunting/icon.png",
+	"environment": "*",
+	"entrypoints": {
+		"main": [
+          "survivalblock.tmm_haunting.common.GhostsOfChristmasPast"
+		],
+        "client": [
+
+        ],
+		"fabric-datagen": [
+          "survivalblock.tmm_haunting.client.datagen.GhostsOfChristmasPastDataGenerator"
+		]
+	},
+	"mixins": [
+		"tmm_haunting.mixins.json"
+	],
+    "depends": {
+        "fabricloader": "*",
+        "minecraft": "~1.21.1",
+        "java": ">=21",
+        "fabric-api": "*"
+    }
+}
