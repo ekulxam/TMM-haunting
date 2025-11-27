@@ -1,2 +1,2 @@
-Ghosts of Christmas Past 1.0.1+1.21.1
-- Add a null check for the group
+Ghosts of Christmas Past 1.0.2+1.21.1
+- Allow spectators to toggle TMM light blocks

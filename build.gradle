@@ -61,6 +61,8 @@ dependencies {
 
     modImplementation "de.maxhenkel.voicechat:voicechat-api:${voicechat_api_version}"
     modImplementation "maven.modrinth:simple-voice-chat:fabric-${voicechat_version}"
+
+    include(implementation(annotationProcessor("io.github.llamalad7:mixinextras-fabric:${project.mixinextras_version}")))
 }
 
 loom {

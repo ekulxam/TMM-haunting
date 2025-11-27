@@ -1,7 +1,12 @@
 package survivalblock.tmm_haunting.common;
 
+import dev.doctor4t.trainmurdermystery.block.NeonPillarBlock;
+import dev.doctor4t.trainmurdermystery.block.NeonTubeBlock;
+import dev.doctor4t.trainmurdermystery.block.OrnamentBlock;
+import dev.doctor4t.trainmurdermystery.block.ToggleableFacingLightBlock;
 import net.fabricmc.api.ModInitializer;
 
+import net.minecraft.block.Block;
 import net.minecraft.util.Identifier;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -19,11 +24,14 @@ public class GhostsOfChristmasPast implements ModInitializer {
 		// This code runs as soon as Minecraft is in a mod-load-ready state.
 		// However, some things (like resources) may still be uninitialized.
 		// Proceed with mild caution.
-
-		LOGGER.info("Hello Fabric world!");
 	}
 
     public static Identifier id(String path) {
         return Identifier.of(MOD_ID, path);
+    }
+
+    @SuppressWarnings("BooleanMethodIsAlwaysInverted")
+    public static boolean canBeUsedBySpectator(Block block) {
+        return block instanceof ToggleableFacingLightBlock || block instanceof NeonPillarBlock || block instanceof NeonTubeBlock || block instanceof OrnamentBlock;
     }
 }
