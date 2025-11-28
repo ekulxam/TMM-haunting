@@ -10,6 +10,7 @@ import de.maxhenkel.voicechat.api.packets.MicrophonePacket;
 import dev.doctor4t.trainmurdermystery.compat.TrainVoicePlugin;
 import net.minecraft.server.network.ServerPlayerEntity;
 import net.minecraft.util.Identifier;
+import org.jetbrains.annotations.Nullable;
 
 import java.util.HashSet;
 import java.util.Objects;
@@ -24,9 +25,9 @@ import static dev.doctor4t.trainmurdermystery.compat.TrainVoicePlugin.SERVER_API
 public class HauntingVoicechatPlugin implements VoicechatPlugin {
     public static final Identifier ID = GhostsOfChristmasPast.id("voicechat_plugin");
     public static final UUID HAUNT_UUID = UUID.randomUUID();
+    @Nullable
     public static StaticAudioChannel hauntChannel;
     public static Set<ServerPlayerEntity> killers = new HashSet<>();
-
 
     public static void initHauntForKiller(ServerPlayerEntity player) {
         if (TrainVoicePlugin.isVoiceChatMissing()) {
@@ -79,14 +80,13 @@ public class HauntingVoicechatPlugin implements VoicechatPlugin {
             return;
         }
 
-        hauntChannel.send(microphonePacket);
+        if (hauntChannel != null) hauntChannel.send(microphonePacket);
     }
 
     public static void reset() {
-        hauntChannel.clearTargets();
+        if (hauntChannel != null) hauntChannel.clearTargets();
         killers.clear();
     }
-
 
     @Override
     public String getPluginId() {
